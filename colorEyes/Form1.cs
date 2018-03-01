@@ -14,44 +14,70 @@ namespace colorEyes
     {
         PictureBox[] allPBs;
         Dictionary<int, List<Color>> allLEDs = new Dictionary<int, List<Color>>(); // #фрейма - набор из 24 цветов 
-        MemoryStream ms = new MemoryStream();
-        int currentFrameNumber = 0;
+
         public Form1()
         {
             InitializeComponent();
 
             allPBs = new[] {
-                Box01,                Box02,                Box03,                Box04,
-                Box05,                Box06,                Box07,                Box08,
-                Box09,                Box10,                Box11,                Box12,
-                Box13,                Box14,                Box15,                Box16,
-                p17,                p18,p19,p20,                p21,p22,p23,p24,
+                // outside left
+                Box01,
+                Box16,
+                Box15,
+                Box14,
+                Box13,
+                Box12,
+                Box11,
+                Box10,
+                Box09,
+                Box08,
+                Box07,
+                Box06,
+                Box05,
+                Box04,
+                Box03,
+                Box02,
+
+
+                // inside left
+                p17,
+                p24,
+                p23,
+                p22,
+                p21,
+                p20,
+                p19,
+                p18,
+                // outside right
                 p25,
-                 p26,
-                  p27,
-                   p28,
-                    p29,
-                p30,
-                p31,
-                p32,
-                p33,
-                p34,
-                p35,
-                p36,
-                p37,
-                p38,
-                p39,
                 p40,
+                p39,
+                p38,
+                p37,
+                p36,
+                p35,
+                p34,
+                p33,
+                p32,
+                p31,
+                p30,
+                p29,
+                p28,
+                p27,
+                p26,
+
+                // inside right
+
                 p41,
-                p42,
-                p43,
-                p44,
-                p45,
-                p46,
+                p48,
                 p47,
-                p48
-            };
-            
+                p46,
+                p45,
+                p44,
+                p43,
+                p42
+       };
+
             resetColors(0);
         }
 
@@ -131,7 +157,7 @@ namespace colorEyes
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
 
-          //  currentFrameNumber = trackBar1.Value;
+            //  currentFrameNumber = trackBar1.Value;
             labelFrame.Text = trackBar1.Value.ToString();
             labelFramesCount.Text = trackBar1.Maximum.ToString();
             if (!allLEDs.ContainsKey(trackBar1.Value))
