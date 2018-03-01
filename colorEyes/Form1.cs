@@ -15,6 +15,7 @@ namespace colorEyes
         PictureBox[] allPBs;
         Dictionary<int, List<Color>> allLEDs = new Dictionary<int, List<Color>>(); // #фрейма - набор из 24 цветов 
         MemoryStream ms = new MemoryStream();
+        int currentFrameNumber = 0;
         public Form1()
         {
             InitializeComponent();
@@ -50,17 +51,19 @@ namespace colorEyes
                 p47,
                 p48
             };
-
-            foreach (PictureBox p in allPBs)
-            {
-                p.BackColor = Color.Black;
-            }
+            
             resetColors(0);
-
         }
 
         void resetColors(int currentFrame)
         {
+            allLEDs[currentFrame] = new List<Color>();
+
+            foreach (PictureBox p in allPBs)
+            {
+                allLEDs[currentFrame].Add(Color.Black);
+            }
+
             foreach (PictureBox p in allPBs)
             {
                 p.BackColor = Color.Black;
@@ -76,6 +79,9 @@ namespace colorEyes
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (saveFileDialog1.ShowDialog() != DialogResult.OK) return;
+
+
             List<byte> frame = new List<byte>();
 
             StringBuilder текстоваяИнвформация = new StringBuilder();
@@ -92,8 +98,8 @@ namespace colorEyes
                     текстоваяИнвформация.Append(c.B.ToString() + ",");
                 }
             }
-            File.WriteAllBytes("eyes.bin", frame.ToArray());
-            File.WriteAllText("eyes.txt", текстоваяИнвформация.ToString());
+            File.WriteAllBytes(saveFileDialog1.FileName, frame.ToArray());
+            File.WriteAllText(saveFileDialog1.FileName + ".txt", текстоваяИнвформация.ToString());
         }
 
         private void pb01_Click(object sender, EventArgs e)
@@ -124,17 +130,19 @@ namespace colorEyes
 
         private void trackBar1_ValueChanged(object sender, EventArgs e)
         {
+
+          //  currentFrameNumber = trackBar1.Value;
             labelFrame.Text = trackBar1.Value.ToString();
             labelFramesCount.Text = trackBar1.Maximum.ToString();
             if (!allLEDs.ContainsKey(trackBar1.Value))
             {
                 allLEDs.Add(trackBar1.Value, new List<Color>());
-                resetColors(0);
+                resetColors(trackBar1.Value);
             }
             else
-            { loadState(trackBar1.Value); }
-
-
+            {
+                loadState(trackBar1.Value);
+            }
         }
 
         void saveState(int currentFrame)

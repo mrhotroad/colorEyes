@@ -89,6 +89,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.textBoxInterval = new System.Windows.Forms.TextBox();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.Box05)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Box06)).BeginInit();
@@ -719,6 +720,10 @@
             this.buttonStop.UseVisualStyleBackColor = true;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "bin|*.bin";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -900,6 +905,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBoxInterval;
         private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
