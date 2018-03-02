@@ -14,7 +14,7 @@ namespace colorEyes
     {
         PictureBox[] allPBs;
         Dictionary<int, List<Color>> allLEDs = new Dictionary<int, List<Color>>(); // #фрейма - набор из 24 цветов 
-
+        Color c_buf = new Color();
         public Form1()
         {
             InitializeComponent();
@@ -100,6 +100,24 @@ namespace colorEyes
         private void button1_Click(object sender, EventArgs e)
         {
             trackBar1.Maximum++;
+            allLEDs.Add(trackBar1.Maximum, new List<Color>());
+            resetColors(trackBar1.Maximum);
+            trackBar1.Value = trackBar1.Maximum;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            trackBar1.Maximum++;
+            allLEDs.Add(trackBar1.Maximum, new List<Color>());
+            //allLEDs[trackBar1.Maximum] = new List<Color>();
+            //loadState(trackBar1.Maximum - 1);
+            allLEDs[trackBar1.Maximum] = new List<Color>();
+
+            foreach (PictureBox p in allPBs)
+            {
+                allLEDs[trackBar1.Maximum] = allLEDs[trackBar1.Maximum - 1];//.Add(Color.Black);
+            }
+            loadState(trackBar1.Maximum - 1);
             trackBar1.Value = trackBar1.Maximum;
         }
 
@@ -129,19 +147,56 @@ namespace colorEyes
             File.WriteAllText(saveFileDialog1.FileName + ".txt", текстоваяИнвформация.ToString());
         }
 
-        private void pb01_Click(object sender, EventArgs e)
+        private void pb01_MouseClick(object sender, MouseEventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                ((PictureBox)sender).BackColor = colorDialog1.Color;
-            };
+            //if (colorDialog1.ShowDialog() == DialogResult.OK)
+            //{
 
+            //};
+            c_buf = ((PictureBox)sender).BackColor;
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    ((PictureBox)sender).BackColor = m_color_box.BackColor;//colorDialog1.Color;
+                    break;
+
+                case MouseButtons.Right:
+                    ((PictureBox)sender).BackColor = r_color_Box.BackColor;//colorDialog1.Color;
+                    break;
+            }
             saveState(trackBar1.Value);
+        }
+
+        private void pb01_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ((PictureBox)sender).BackColor = m_color_box.BackColor = c_buf;
+            colorDialog1.Color = c_buf;
+            switch (e.Button)
+            {
+                case MouseButtons.Left:
+                    if (colorDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        ((PictureBox)sender).BackColor = m_color_box.BackColor = colorDialog1.Color;
+                        label3.Text = colorDialog1.Color.R.ToString() + ", " + colorDialog1.Color.G.ToString() + ", " + colorDialog1.Color.B.ToString();
+                    };
+                    break;
+
+                case MouseButtons.Right:
+                    if (colorDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        ((PictureBox)sender).BackColor = r_color_Box.BackColor = colorDialog1.Color;
+                        label4.Text = colorDialog1.Color.R.ToString() + ", " + colorDialog1.Color.G.ToString() + ", " + colorDialog1.Color.B.ToString();
+                    };
+                    break;
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            button2.Enabled = false;
+            buttonStop.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -161,15 +216,15 @@ namespace colorEyes
             //  currentFrameNumber = trackBar1.Value;
             labelFrame.Text = trackBar1.Value.ToString();
             labelFramesCount.Text = trackBar1.Maximum.ToString();
-            if (!allLEDs.ContainsKey(trackBar1.Value))
-            {
-                allLEDs.Add(trackBar1.Value, new List<Color>());
-                resetColors(trackBar1.Value);
-            }
-            else
-            {
+           // if (!allLEDs.ContainsKey(trackBar1.Value))
+            //{
+            //    allLEDs.Add(trackBar1.Value, new List<Color>());
+            //    resetColors(trackBar1.Value);
+            //}
+            //else
+            //{
                 loadState(trackBar1.Value);
-            }
+            //}
         }
 
         void saveState(int currentFrame)
@@ -199,6 +254,26 @@ namespace colorEyes
         private void buttonStop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            buttonStop.Enabled = false;
+            button2.Enabled = true;
+        }
+
+        private void m_color_box_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                m_color_box.BackColor = colorDialog1.Color;
+                label3.Text = colorDialog1.Color.R.ToString()+", " +colorDialog1.Color.G.ToString() + ", " + colorDialog1.Color.B.ToString();
+            };
+        }
+
+        private void r_color_Box_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                r_color_Box.BackColor = colorDialog1.Color;
+                label4.Text = colorDialog1.Color.R.ToString() + ", " + colorDialog1.Color.G.ToString() + ", " + colorDialog1.Color.B.ToString();
+            };
         }
     }
 }

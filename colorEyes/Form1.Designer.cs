@@ -90,6 +90,11 @@
             this.p20 = new System.Windows.Forms.PictureBox();
             this.p19 = new System.Windows.Forms.PictureBox();
             this.Box05 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.m_color_box = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.r_color_Box = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p27)).BeginInit();
@@ -139,6 +144,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Box05)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_color_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r_color_Box)).BeginInit();
             this.SuspendLayout();
             // 
             // trackBar1
@@ -146,17 +153,17 @@
             this.trackBar1.Location = new System.Drawing.Point(12, 428);
             this.trackBar1.Maximum = 0;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(682, 45);
+            this.trackBar1.Size = new System.Drawing.Size(621, 45);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(700, 428);
+            this.button1.Location = new System.Drawing.Point(627, 428);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 23);
+            this.button1.Size = new System.Drawing.Size(47, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "+";
+            this.button1.Text = "Empty";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -172,7 +179,7 @@
             // labelFramesCount
             // 
             this.labelFramesCount.AutoSize = true;
-            this.labelFramesCount.Location = new System.Drawing.Point(667, 463);
+            this.labelFramesCount.Location = new System.Drawing.Point(617, 460);
             this.labelFramesCount.Name = "labelFramesCount";
             this.labelFramesCount.Size = new System.Drawing.Size(25, 13);
             this.labelFramesCount.TabIndex = 3;
@@ -232,6 +239,7 @@
             // 
             // buttonStop
             // 
+            this.buttonStop.Enabled = false;
             this.buttonStop.Location = new System.Drawing.Point(567, 398);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(75, 23);
@@ -252,7 +260,8 @@
             this.p28.Size = new System.Drawing.Size(18, 17);
             this.p28.TabIndex = 4;
             this.p28.TabStop = false;
-            this.p28.Click += new System.EventHandler(this.pb01_Click);
+            this.p28.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p28.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p27
             // 
@@ -262,7 +271,8 @@
             this.p27.Size = new System.Drawing.Size(18, 17);
             this.p27.TabIndex = 25;
             this.p27.TabStop = false;
-            this.p27.Click += new System.EventHandler(this.pb01_Click);
+            this.p27.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p27.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p26
             // 
@@ -272,7 +282,8 @@
             this.p26.Size = new System.Drawing.Size(18, 17);
             this.p26.TabIndex = 24;
             this.p26.TabStop = false;
-            this.p26.Click += new System.EventHandler(this.pb01_Click);
+            this.p26.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p26.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p25
             // 
@@ -282,7 +293,8 @@
             this.p25.Size = new System.Drawing.Size(18, 17);
             this.p25.TabIndex = 23;
             this.p25.TabStop = false;
-            this.p25.Click += new System.EventHandler(this.pb01_Click);
+            this.p25.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p25.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p40
             // 
@@ -292,7 +304,8 @@
             this.p40.Size = new System.Drawing.Size(18, 17);
             this.p40.TabIndex = 22;
             this.p40.TabStop = false;
-            this.p40.Click += new System.EventHandler(this.pb01_Click);
+            this.p40.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p40.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p39
             // 
@@ -302,7 +315,8 @@
             this.p39.Size = new System.Drawing.Size(18, 17);
             this.p39.TabIndex = 21;
             this.p39.TabStop = false;
-            this.p39.Click += new System.EventHandler(this.pb01_Click);
+            this.p39.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p39.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p38
             // 
@@ -312,7 +326,8 @@
             this.p38.Size = new System.Drawing.Size(18, 17);
             this.p38.TabIndex = 20;
             this.p38.TabStop = false;
-            this.p38.Click += new System.EventHandler(this.pb01_Click);
+            this.p38.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p38.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p37
             // 
@@ -322,7 +337,8 @@
             this.p37.Size = new System.Drawing.Size(18, 17);
             this.p37.TabIndex = 19;
             this.p37.TabStop = false;
-            this.p37.Click += new System.EventHandler(this.pb01_Click);
+            this.p37.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p37.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p36
             // 
@@ -332,7 +348,8 @@
             this.p36.Size = new System.Drawing.Size(18, 17);
             this.p36.TabIndex = 18;
             this.p36.TabStop = false;
-            this.p36.Click += new System.EventHandler(this.pb01_Click);
+            this.p36.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p36.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p35
             // 
@@ -342,7 +359,8 @@
             this.p35.Size = new System.Drawing.Size(18, 17);
             this.p35.TabIndex = 17;
             this.p35.TabStop = false;
-            this.p35.Click += new System.EventHandler(this.pb01_Click);
+            this.p35.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p35.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p34
             // 
@@ -352,7 +370,8 @@
             this.p34.Size = new System.Drawing.Size(18, 17);
             this.p34.TabIndex = 16;
             this.p34.TabStop = false;
-            this.p34.Click += new System.EventHandler(this.pb01_Click);
+            this.p34.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p34.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p33
             // 
@@ -362,7 +381,8 @@
             this.p33.Size = new System.Drawing.Size(18, 17);
             this.p33.TabIndex = 15;
             this.p33.TabStop = false;
-            this.p33.Click += new System.EventHandler(this.pb01_Click);
+            this.p33.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p33.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p32
             // 
@@ -372,7 +392,8 @@
             this.p32.Size = new System.Drawing.Size(18, 17);
             this.p32.TabIndex = 14;
             this.p32.TabStop = false;
-            this.p32.Click += new System.EventHandler(this.pb01_Click);
+            this.p32.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p32.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p31
             // 
@@ -382,7 +403,8 @@
             this.p31.Size = new System.Drawing.Size(18, 17);
             this.p31.TabIndex = 13;
             this.p31.TabStop = false;
-            this.p31.Click += new System.EventHandler(this.pb01_Click);
+            this.p31.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p31.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p30
             // 
@@ -392,87 +414,96 @@
             this.p30.Size = new System.Drawing.Size(18, 17);
             this.p30.TabIndex = 12;
             this.p30.TabStop = false;
-            this.p30.Click += new System.EventHandler(this.pb01_Click);
+            this.p30.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p30.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p42
             // 
             this.p42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p42.Location = new System.Drawing.Point(440, 97);
+            this.p42.Location = new System.Drawing.Point(441, 95);
             this.p42.Name = "p42";
             this.p42.Size = new System.Drawing.Size(18, 17);
             this.p42.TabIndex = 11;
             this.p42.TabStop = false;
-            this.p42.Click += new System.EventHandler(this.pb01_Click);
+            this.p42.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p42.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p41
             // 
             this.p41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p41.Location = new System.Drawing.Point(425, 126);
+            this.p41.Location = new System.Drawing.Point(426, 124);
             this.p41.Name = "p41";
             this.p41.Size = new System.Drawing.Size(18, 17);
             this.p41.TabIndex = 10;
             this.p41.TabStop = false;
-            this.p41.Click += new System.EventHandler(this.pb01_Click);
+            this.p41.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p41.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p48
             // 
             this.p48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p48.Location = new System.Drawing.Point(441, 151);
+            this.p48.Location = new System.Drawing.Point(442, 149);
             this.p48.Name = "p48";
             this.p48.Size = new System.Drawing.Size(18, 17);
             this.p48.TabIndex = 9;
             this.p48.TabStop = false;
-            this.p48.Click += new System.EventHandler(this.pb01_Click);
+            this.p48.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p48.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p47
             // 
             this.p47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p47.Location = new System.Drawing.Point(469, 168);
+            this.p47.Location = new System.Drawing.Point(470, 166);
             this.p47.Name = "p47";
             this.p47.Size = new System.Drawing.Size(18, 17);
             this.p47.TabIndex = 8;
             this.p47.TabStop = false;
-            this.p47.Click += new System.EventHandler(this.pb01_Click);
+            this.p47.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p47.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p46
             // 
             this.p46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p46.Location = new System.Drawing.Point(492, 153);
+            this.p46.Location = new System.Drawing.Point(497, 148);
             this.p46.Name = "p46";
             this.p46.Size = new System.Drawing.Size(18, 17);
             this.p46.TabIndex = 7;
             this.p46.TabStop = false;
-            this.p46.Click += new System.EventHandler(this.pb01_Click);
+            this.p46.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p46.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p45
             // 
             this.p45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p45.Location = new System.Drawing.Point(509, 126);
+            this.p45.Location = new System.Drawing.Point(510, 124);
             this.p45.Name = "p45";
             this.p45.Size = new System.Drawing.Size(18, 17);
             this.p45.TabIndex = 6;
             this.p45.TabStop = false;
-            this.p45.Click += new System.EventHandler(this.pb01_Click);
+            this.p45.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p45.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p44
             // 
             this.p44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p44.Location = new System.Drawing.Point(496, 98);
+            this.p44.Location = new System.Drawing.Point(497, 96);
             this.p44.Name = "p44";
             this.p44.Size = new System.Drawing.Size(18, 17);
             this.p44.TabIndex = 5;
             this.p44.TabStop = false;
-            this.p44.Click += new System.EventHandler(this.pb01_Click);
+            this.p44.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p44.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p43
             // 
             this.p43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.p43.Location = new System.Drawing.Point(468, 82);
+            this.p43.Location = new System.Drawing.Point(469, 80);
             this.p43.Name = "p43";
             this.p43.Size = new System.Drawing.Size(18, 17);
             this.p43.TabIndex = 26;
             this.p43.TabStop = false;
-            this.p43.Click += new System.EventHandler(this.pb01_Click);
+            this.p43.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p43.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p29
             // 
@@ -482,7 +513,8 @@
             this.p29.Size = new System.Drawing.Size(18, 17);
             this.p29.TabIndex = 27;
             this.p29.TabStop = false;
-            this.p29.Click += new System.EventHandler(this.pb01_Click);
+            this.p29.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p29.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box04
             // 
@@ -492,7 +524,8 @@
             this.Box04.Size = new System.Drawing.Size(18, 17);
             this.Box04.TabIndex = 0;
             this.Box04.TabStop = false;
-            this.Box04.Click += new System.EventHandler(this.pb01_Click);
+            this.Box04.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box04.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box03
             // 
@@ -502,7 +535,8 @@
             this.Box03.Size = new System.Drawing.Size(18, 17);
             this.Box03.TabIndex = 0;
             this.Box03.TabStop = false;
-            this.Box03.Click += new System.EventHandler(this.pb01_Click);
+            this.Box03.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box03.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box02
             // 
@@ -512,7 +546,8 @@
             this.Box02.Size = new System.Drawing.Size(18, 17);
             this.Box02.TabIndex = 0;
             this.Box02.TabStop = false;
-            this.Box02.Click += new System.EventHandler(this.pb01_Click);
+            this.Box02.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box02.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box01
             // 
@@ -522,7 +557,8 @@
             this.Box01.Size = new System.Drawing.Size(18, 17);
             this.Box01.TabIndex = 0;
             this.Box01.TabStop = false;
-            this.Box01.Click += new System.EventHandler(this.pb01_Click);
+            this.Box01.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box01.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box16
             // 
@@ -532,7 +568,8 @@
             this.Box16.Size = new System.Drawing.Size(18, 17);
             this.Box16.TabIndex = 0;
             this.Box16.TabStop = false;
-            this.Box16.Click += new System.EventHandler(this.pb01_Click);
+            this.Box16.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box16.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box15
             // 
@@ -542,7 +579,8 @@
             this.Box15.Size = new System.Drawing.Size(18, 17);
             this.Box15.TabIndex = 0;
             this.Box15.TabStop = false;
-            this.Box15.Click += new System.EventHandler(this.pb01_Click);
+            this.Box15.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box15.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box14
             // 
@@ -552,7 +590,8 @@
             this.Box14.Size = new System.Drawing.Size(18, 17);
             this.Box14.TabIndex = 0;
             this.Box14.TabStop = false;
-            this.Box14.Click += new System.EventHandler(this.pb01_Click);
+            this.Box14.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box14.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box13
             // 
@@ -562,7 +601,8 @@
             this.Box13.Size = new System.Drawing.Size(18, 17);
             this.Box13.TabIndex = 0;
             this.Box13.TabStop = false;
-            this.Box13.Click += new System.EventHandler(this.pb01_Click);
+            this.Box13.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box13.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box12
             // 
@@ -572,7 +612,8 @@
             this.Box12.Size = new System.Drawing.Size(18, 17);
             this.Box12.TabIndex = 0;
             this.Box12.TabStop = false;
-            this.Box12.Click += new System.EventHandler(this.pb01_Click);
+            this.Box12.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box12.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box11
             // 
@@ -582,7 +623,8 @@
             this.Box11.Size = new System.Drawing.Size(18, 17);
             this.Box11.TabIndex = 0;
             this.Box11.TabStop = false;
-            this.Box11.Click += new System.EventHandler(this.pb01_Click);
+            this.Box11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box11.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box10
             // 
@@ -592,7 +634,8 @@
             this.Box10.Size = new System.Drawing.Size(18, 17);
             this.Box10.TabIndex = 0;
             this.Box10.TabStop = false;
-            this.Box10.Click += new System.EventHandler(this.pb01_Click);
+            this.Box10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box10.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box09
             // 
@@ -602,7 +645,8 @@
             this.Box09.Size = new System.Drawing.Size(18, 17);
             this.Box09.TabIndex = 0;
             this.Box09.TabStop = false;
-            this.Box09.Click += new System.EventHandler(this.pb01_Click);
+            this.Box09.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box09.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box08
             // 
@@ -612,7 +656,8 @@
             this.Box08.Size = new System.Drawing.Size(18, 17);
             this.Box08.TabIndex = 0;
             this.Box08.TabStop = false;
-            this.Box08.Click += new System.EventHandler(this.pb01_Click);
+            this.Box08.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box08.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box07
             // 
@@ -622,7 +667,8 @@
             this.Box07.Size = new System.Drawing.Size(18, 17);
             this.Box07.TabIndex = 0;
             this.Box07.TabStop = false;
-            this.Box07.Click += new System.EventHandler(this.pb01_Click);
+            this.Box07.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box07.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box06
             // 
@@ -632,7 +678,8 @@
             this.Box06.Size = new System.Drawing.Size(18, 17);
             this.Box06.TabIndex = 0;
             this.Box06.TabStop = false;
-            this.Box06.Click += new System.EventHandler(this.pb01_Click);
+            this.Box06.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box06.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p18
             // 
@@ -642,7 +689,8 @@
             this.p18.Size = new System.Drawing.Size(18, 17);
             this.p18.TabIndex = 0;
             this.p18.TabStop = false;
-            this.p18.Click += new System.EventHandler(this.pb01_Click);
+            this.p18.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p18.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p17
             // 
@@ -652,7 +700,8 @@
             this.p17.Size = new System.Drawing.Size(18, 17);
             this.p17.TabIndex = 0;
             this.p17.TabStop = false;
-            this.p17.Click += new System.EventHandler(this.pb01_Click);
+            this.p17.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p17.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p24
             // 
@@ -662,7 +711,8 @@
             this.p24.Size = new System.Drawing.Size(18, 17);
             this.p24.TabIndex = 0;
             this.p24.TabStop = false;
-            this.p24.Click += new System.EventHandler(this.pb01_Click);
+            this.p24.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p24.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p23
             // 
@@ -672,7 +722,8 @@
             this.p23.Size = new System.Drawing.Size(18, 17);
             this.p23.TabIndex = 0;
             this.p23.TabStop = false;
-            this.p23.Click += new System.EventHandler(this.pb01_Click);
+            this.p23.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p23.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p22
             // 
@@ -682,7 +733,8 @@
             this.p22.Size = new System.Drawing.Size(18, 17);
             this.p22.TabIndex = 0;
             this.p22.TabStop = false;
-            this.p22.Click += new System.EventHandler(this.pb01_Click);
+            this.p22.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p22.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p21
             // 
@@ -692,7 +744,8 @@
             this.p21.Size = new System.Drawing.Size(18, 17);
             this.p21.TabIndex = 0;
             this.p21.TabStop = false;
-            this.p21.Click += new System.EventHandler(this.pb01_Click);
+            this.p21.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p21.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p20
             // 
@@ -702,7 +755,8 @@
             this.p20.Size = new System.Drawing.Size(18, 17);
             this.p20.TabIndex = 0;
             this.p20.TabStop = false;
-            this.p20.Click += new System.EventHandler(this.pb01_Click);
+            this.p20.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p20.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // p19
             // 
@@ -712,7 +766,8 @@
             this.p19.Size = new System.Drawing.Size(18, 17);
             this.p19.TabIndex = 0;
             this.p19.TabStop = false;
-            this.p19.Click += new System.EventHandler(this.pb01_Click);
+            this.p19.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.p19.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
             // 
             // Box05
             // 
@@ -722,13 +777,67 @@
             this.Box05.Size = new System.Drawing.Size(18, 17);
             this.Box05.TabIndex = 0;
             this.Box05.TabStop = false;
-            this.Box05.Click += new System.EventHandler(this.pb01_Click);
+            this.Box05.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseClick);
+            this.Box05.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pb01_MouseDoubleClick);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(680, 428);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 23);
+            this.button3.TabIndex = 32;
+            this.button3.Text = "Dup";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // m_color_box
+            // 
+            this.m_color_box.BackColor = System.Drawing.Color.Black;
+            this.m_color_box.Location = new System.Drawing.Point(617, 347);
+            this.m_color_box.Name = "m_color_box";
+            this.m_color_box.Size = new System.Drawing.Size(52, 34);
+            this.m_color_box.TabIndex = 33;
+            this.m_color_box.TabStop = false;
+            this.m_color_box.Click += new System.EventHandler(this.m_color_box_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(614, 331);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "0, 0, 0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(672, 331);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "0, 0, 0";
+            // 
+            // r_color_Box
+            // 
+            this.r_color_Box.BackColor = System.Drawing.Color.Black;
+            this.r_color_Box.Location = new System.Drawing.Point(675, 347);
+            this.r_color_Box.Name = "r_color_Box";
+            this.r_color_Box.Size = new System.Drawing.Size(52, 34);
+            this.r_color_Box.TabIndex = 35;
+            this.r_color_Box.TabStop = false;
+            this.r_color_Box.Click += new System.EventHandler(this.r_color_Box_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 485);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.r_color_Box);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.m_color_box);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBoxInterval);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.button2);
@@ -788,7 +897,7 @@
             this.Controls.Add(this.p19);
             this.Controls.Add(this.Box05);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Animator 9000";
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p27)).EndInit();
@@ -838,6 +947,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Box05)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.m_color_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.r_color_Box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -906,6 +1017,11 @@
         private System.Windows.Forms.TextBox textBoxInterval;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox m_color_box;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox r_color_Box;
     }
 }
 
